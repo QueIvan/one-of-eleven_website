@@ -1,20 +1,26 @@
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Home from "./layouts/home";
+import Board from "./layouts/board";
+import List from "./layouts/list";
+import Login from "./layouts/login";
+import Question from "./layouts/question";
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="boards" element={<Board />} />
+          <Route path="list" element={<List />} />
+          <Route path="login" element={<Login />} />
+          <Route path="questions" element={<Question />} />
+        </Routes>
+      </BrowserRouter>
+
   );
 }
 
